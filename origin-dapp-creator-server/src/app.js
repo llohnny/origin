@@ -95,10 +95,13 @@ app.post('/config/preview', async (req, res) => {
 app.get('/marketplaces', async (req, res) => {
   const results = await getDnsRecords(/^([^.]+\.[^.]+\.[^.]+)$/g, 'CNAME')
   let marketplaces = []
-  results.map((record) => {
-    marketplaces.push(record.name)
+  results.forEach((record) => {
+    if (!record.name.includes('.staging.') && !record.name.includes('.dev.')) {
+      marketplaces.push(record.name)
+    }
   })
-  return res.send(marketplaces)
+  const marketplaceList = marketplaces.join('\n')
+  return res.send(marketplaceList)
 })
 
 app.post('/validate/subdomain', validateSubdomain)
