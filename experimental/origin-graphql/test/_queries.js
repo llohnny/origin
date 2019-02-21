@@ -55,48 +55,50 @@ const GetAllOffers = gql`
 `
 
 const GetListing = gql`
-query GetListing($id: String!) {
-  marketplace {
-    listing(id: $id) {
-      id
-      status
-      totalEvents
-      seller {
+  query GetListing($id: String!) {
+    marketplace {
+      listing(id: $id) {
         id
-      }
-      arbitrator {
-        id
-      }
-      deposit
-      depositAvailable
-      createdEvent {
-        timestamp
-      }
+        status
+        totalEvents
+        seller {
+          id
+        }
+        arbitrator {
+          id
+        }
+        deposit
+        depositAvailable
+        createdEvent {
+          timestamp
+        }
 
-      category
-      categoryStr
-      subCategory
-      title
-      description
-      currencyId
-      unitsTotal
-      unitsAvailable
-      unitsSold
-      featured
-      hidden
-      price {
-        amount
-        currency
+        category
+        categoryStr
+        subCategory
+        title
+        description
+        currencyId
+        featured
+        hidden
+        price {
+          amount
+          currency
+        }
+        media {
+          url
+          contentType
+        }
+        commission
+        commissionPerUnit
+        ... on UnitListing {
+          unitsTotal
+          unitsAvailable
+          unitsSold
+        }
       }
-      media {
-        url
-        contentType
-      }
-      commission
-      commissionPerUnit
     }
   }
-}
 `
 
 export default {
