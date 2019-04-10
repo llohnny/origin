@@ -27,7 +27,7 @@ This will start a `webpack-dev-server` with hot reloading on `http://localhost:3
 
 3. Deploy contracts (optional)
 
-By default the DApp will start its own Ethereum blockchain using Ganache. Because it is a fresh network you'll need to deploy some contracts and create some sample listings using the `admin` tool. This can be done by running:
+By default the DApp will start its own Ethereum blockchain using Ganache. Because it is a fresh network, you'll need to deploy some contracts and create some sample listings using the `admin` tool. This can be done by running:
 
 ```
 cd dapps/admin && npm start
@@ -61,7 +61,7 @@ You can view the state of the network at https://testnet.originprotocol.com/.
 
 ### Other settings
 
-The marketplace DApp includes a settings page at `http://localhost:3000/settings` which is useful if you want to switch individual services, e.g. use a different Web3 provider or atteestation server.
+The marketplace DApp includes a settings page at `http://localhost:3000/settings` that is useful if you want to switch individual services, e.g. use a different Web3 provider or attestation server.
 
 ### About the Origin repository
 
@@ -86,7 +86,7 @@ There is a Docker Compose configuration available for running a variety of backe
 - @origin/notifications on http://localhost:3456)
 ```
 
-⚠️  If you want to run the Docker Compose setup ensure that both `@origin/marketplace` and `@origin/admin` are not running before you start the services. The required ports will not be available if either of those two are started before running `docker-compose up`.
+⚠️  If you want to run the Docker Compose setup, ensure that both `@origin/marketplace` and `@origin/admin` are not running before you start the services. The required ports will not be available if either of those two are started before running `docker-compose up`.
 
 ### System Requirements
 
